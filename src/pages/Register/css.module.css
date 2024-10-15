@@ -1,0 +1,21 @@
+.register {
+  display: grid;
+  height: 100%;
+  place-content: center;
+  gap: var(--lg);
+
+  .form {
+    position: relative;
+    width: 300px;
+    display: grid;
+    gap: var(--md);
+  }
+
+  .wrapper_register {
+    padding-top: var(--lg);
+
+    a {
+      color: var(--pri);
+    }
+  }
+}

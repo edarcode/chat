@@ -1,3 +1,5 @@
+import LinkTo from "../../components/links/LinkTo/LinkTo";
+import { REGISTER } from "../../router/children";
 import css from "./css.module.css";
 
 export default function Home() {
@@ -11,6 +13,7 @@ export default function Home() {
           segura, ya sea con tus amigos, familia o compañeros de trabajo, todo
           desde una sola aplicación.
         </p>
+        <LinkTo to={REGISTER.to}>Empezar</LinkTo>
       </article>
     </section>
   );
