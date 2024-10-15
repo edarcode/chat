@@ -1,0 +1,12 @@
+.footer {
+  display: grid;
+  justify-items: center;
+  padding: var(--md) var(--lg);
+  background-color: var(--sec);
+  color: var(--t-main);
+
+  @media (prefers-color-scheme: light) {
+    background-color: var(--l-sec);
+    color: var(--l-t-main);
+  }
+}

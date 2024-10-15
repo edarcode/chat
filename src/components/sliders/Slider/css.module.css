@@ -1,0 +1,60 @@
+.slider {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+	min-width: 100%;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+	width: 100%;
+	display: block;
+	border-radius: 10px;
+}
+
+.controls {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8px;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--grey);
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: var(--pri);
+
+		@media (prefers-color-scheme: light) {
+			background-color: var(--l-pri);
+		}
+	}
+}
+
+.dot.active {
+	background-color: var(--pri);
+
+	@media (prefers-color-scheme: light) {
+		background-color: var(--l-pri);
+	}
+}

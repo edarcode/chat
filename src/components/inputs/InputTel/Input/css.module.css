@@ -1,0 +1,35 @@
+.label {
+	position: relative;
+}
+
+.input {
+	width: 100%;
+	border: none;
+	border-radius: var(--sm);
+	padding: var(--sm) var(--md);
+	outline: transparent;
+	background-color: var(--bg-surf);
+	color: var(--t-sec);
+
+	&:focus {
+		outline: 1px solid var(--pri);
+	}
+}
+
+.input__err {
+	outline: 1px solid var(--red);
+}
+
+.input__state {
+	padding-right: calc(var(--md) + 20px);
+}
+
+@media (prefers-color-scheme: light) {
+	.input {
+		background-color: var(--l-bg-surf);
+		color: var(--l-t-sec);
+	}
+	.input:focus {
+		outline: 1px solid var(--l-pri);
+	}
+}

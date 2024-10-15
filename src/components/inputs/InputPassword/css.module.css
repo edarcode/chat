@@ -1,0 +1,17 @@
+.label {
+	display: grid;
+	gap: var(--xs);
+	cursor: text;
+	.title {
+		font-weight: bold;
+	}
+
+	.title,
+	.err {
+		margin-left: 5px;
+	}
+
+	.err {
+		color: var(--red);
+	}
+}
