@@ -1,8 +1,10 @@
 .home {
-	display: grid;
-	gap: var(--lg);
-}
+  display: grid;
+  place-content: center;
+  padding: var(--lg);
+  height: 100%;
 
-.titles {
-	padding: 0 var(--lg);
+  .intro {
+    max-width: 500px;
+  }
 }
