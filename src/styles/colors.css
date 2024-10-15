@@ -2,7 +2,7 @@
   /* Dark mode */
   --bg-main: #121212;
   --bg-surf: #1e1e1e;
-  --pri: #5b3f8d;
+  --pri: hsl(262, 38%, 50%);
   --sec: #495e57;
   --t-main: #e0e0e0;
   --t-sec: #bdbdbd;

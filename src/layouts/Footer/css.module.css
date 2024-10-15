@@ -2,11 +2,11 @@
   display: grid;
   justify-items: center;
   padding: var(--md) var(--lg);
-  background-color: var(--sec);
+  background-color: var(--pri);
   color: var(--t-main);
 
   @media (prefers-color-scheme: light) {
-    background-color: var(--l-sec);
+    background-color: var(--l-pri);
     color: var(--l-t-main);
   }
 }
