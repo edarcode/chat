@@ -1,0 +1,6 @@
+:root {
+  /* Sombra universal para ambos modos */
+  --s-main: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06); /* Sombra principal */
+  --s-hover: 0 8px 10px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para hover */
+  --s-inset: inset 0 2px 4px rgba(0, 0, 0, 0.08); /* Sombra interna */
+}
