@@ -34,12 +34,12 @@ type Params = {
 
 export type Account = {
   id: string;
-  role: "ADMIN" | "CLIENT"; // Ajusta según los roles posibles
+  role: "ADMIN" | "CLIENT";
   email: string;
   password: string;
   name: string | null;
   img: string | null;
-  createdAt: string; // Puedes cambiar a Date si prefieres trabajar con fechas como objetos
+  createdAt: string;
   updateAt: string;
   followingTo: Follow[];
   followedBy: Follow[];
