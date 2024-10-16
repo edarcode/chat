@@ -1,14 +1,11 @@
 .followingTo {
-  padding: var(--md);
-  display: grid;
-  gap: var(--md);
-
   .followed {
     display: flex;
     gap: var(--md);
     align-items: center;
 
-    .img {
+    .img,
+    svg {
       width: 32px;
       height: 32px;
     }

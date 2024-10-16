@@ -1,0 +1,5 @@
+.wrapperFollowingTo {
+  padding: var(--md);
+  display: grid;
+  gap: var(--md);
+}
