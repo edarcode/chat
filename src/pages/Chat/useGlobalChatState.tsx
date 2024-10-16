@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { Message } from "./WrapperChat/getChatService";
 import { Account } from "./getAccountService";
+import { Message } from "./WrapperChat/WrapperFollowingTo/FollowingTo/getChatService";
 
 type Chat = {
   chat: Message[] | undefined;
