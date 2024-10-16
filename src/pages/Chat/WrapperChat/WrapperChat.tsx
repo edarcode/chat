@@ -1,12 +1,12 @@
 import css from "./css.module.css";
-import Msgs from "./Msgs/Msgs";
 import WrapperFollowingTo from "./WrapperFollowingTo/WrapperFollowingTo";
+import WrapperMsgs from "./WrapperMsgs/WrapperMsgs";
 
 export default function WrapperChat() {
   return (
     <article className={css.wrapperChat}>
       <WrapperFollowingTo />
-      <Msgs />
+      <WrapperMsgs />
     </article>
   );
 }

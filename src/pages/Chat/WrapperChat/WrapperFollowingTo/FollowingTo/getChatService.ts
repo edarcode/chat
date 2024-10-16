@@ -1,14 +1,14 @@
-import { CHAT_API_URL } from "../../../consts/urls";
-import { EdarErr } from "../../../errors/EdarErr";
+import { CHAT_API_URL } from "../../../../../consts/urls";
+import { EdarErr } from "../../../../../errors/EdarErr";
 
 export const getChatService = async (
   params: Params
 ): Promise<Message[] | undefined> => {
-  const { signal, token } = params;
+  const { signal, token, id } = params;
 
-  if (!token) return;
+  if (!token || !token) return;
 
-  const res = await fetch(CHAT_API_URL.getChat, {
+  const res = await fetch(CHAT_API_URL.getChatWith + `/${id}`, {
     signal,
     method: "GET",
     headers: {
@@ -30,6 +30,7 @@ export const getChatService = async (
 type Params = {
   signal: AbortSignal;
   token?: string | null;
+  id: string;
 };
 
 export type Message = {
