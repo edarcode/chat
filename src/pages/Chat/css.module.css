@@ -3,44 +3,4 @@
   height: 100%;
   display: grid;
   place-content: center;
-
-  .chat {
-    max-width: 600px;
-    min-width: 300px;
-    background-color: var(--l-bg-surf);
-    color: var(--l-t-sec);
-    display: grid;
-    gap: var(--sm);
-    grid-template-columns: auto 1fr;
-
-    .followingTo {
-      padding: var(--md);
-      display: grid;
-      gap: var(--md);
-
-      .search input {
-        background-color: var(--l-bg-main);
-        color: var(--l-t-sec);
-      }
-
-      .followed {
-        display: flex;
-        gap: var(--md);
-        align-items: center;
-
-        .img {
-          width: 32px;
-          height: 32px;
-        }
-      }
-    }
-
-    .msgs {
-      background-color: var(--l-bg-main);
-      color: var(--l-t-main);
-      padding: var(--md);
-      display: grid;
-      place-content: center;
-    }
-  }
 }

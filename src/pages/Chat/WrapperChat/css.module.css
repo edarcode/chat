@@ -1,0 +1,11 @@
+.wrapperChat {
+  width: 600px;
+  background-color: var(--bg-surf);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-radius: var(--md);
+
+  @media (prefers-color-scheme: light) {
+    background-color: var(--l-bg-surf);
+  }
+}

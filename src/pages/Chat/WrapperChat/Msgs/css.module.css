@@ -1,0 +1,16 @@
+.msgs {
+  position: relative;
+  padding: var(--md);
+  display: grid;
+  place-content: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 1px;
+    height: 90%;
+    background-color: var(--soft-grey);
+  }
+}

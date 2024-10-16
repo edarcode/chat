@@ -32,7 +32,7 @@ type Params = {
   token?: string | null;
 };
 
-type Account = {
+export type Account = {
   id: string;
   role: "ADMIN" | "CLIENT"; // Ajusta según los roles posibles
   email: string;
@@ -45,7 +45,7 @@ type Account = {
   followedBy: Follows[];
 };
 
-type Follows = {
+export type Follows = {
   id: string;
   name: string | null;
   img: string | null;
