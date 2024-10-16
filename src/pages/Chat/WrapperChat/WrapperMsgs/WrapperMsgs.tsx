@@ -6,21 +6,14 @@ import css from "./css.module.css";
 export default function WrapperMsgs() {
   const chat = useGlobalChatState((state) => state.chat);
 
-  if (!chat) return null;
-  if (!chat.length)
-    return (
-      <section className={css.emptyChat}>
-        No tienes mensajes con esta persona.
-      </section>
-    );
+  const isValidChat = chat && chat.length > 0;
+  const msgs = isValidChat
+    ? chat.map((record) => <span key={record.id}>{record.text}</span>)
+    : null;
 
   return (
     <section className={css.wrapperMsgs}>
-      <div className={css.msgs}>
-        {chat.map((record) => (
-          <span key={record.id}>{record.text}</span>
-        ))}
-      </div>
+      <div className={css.msgs}>{msgs}</div>
 
       <form className={css.form}>
         <InputText />

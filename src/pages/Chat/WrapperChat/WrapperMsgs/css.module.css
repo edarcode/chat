@@ -1,7 +1,18 @@
 .wrapperMsgs {
+  position: relative;
   padding: var(--md);
   display: grid;
   grid-template-rows: 1fr auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 1px;
+    height: 90%;
+    background-color: var(--soft-grey);
+  }
 
   .form {
     display: grid;
@@ -16,19 +27,4 @@
 .emptyChat {
   display: grid;
   place-content: center;
-}
-
-.wrapperMsgs,
-.emptyChat {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    left: 0;
-    width: 1px;
-    height: 90%;
-    background-color: var(--soft-grey);
-  }
 }
