@@ -2,12 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "../../../../../auth/useAuth";
 import { getChatService } from "./getChatService";
 import { useEffect, useState } from "react";
-import { useGlobalChatState } from "../../../useGlobalChatState";
+import { useCurrentChat } from "../../../useCurrentChat";
 
 export const useGetChat = () => {
   const token = useAuth((auth) => auth.token);
   const [id, setId] = useState("");
-  const updateChat = useGlobalChatState((state) => state.updateChat);
+  const updateChat = useCurrentChat((state) => state.updateChat);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["chat", { token, id }],

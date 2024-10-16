@@ -1,10 +1,10 @@
 import Btn from "../../../../components/buttons/Btn/Btn";
 import InputText from "../../../../components/inputs/InputText/InputText";
-import { useGlobalChatState } from "../../useGlobalChatState";
+import { useCurrentChat } from "../../useCurrentChat";
 import css from "./css.module.css";
 
 export default function WrapperMsgs() {
-  const chat = useGlobalChatState((state) => state.chat);
+  const chat = useCurrentChat((state) => state.chat);
 
   const isValidChat = chat && chat.length > 0;
   const msgs = isValidChat

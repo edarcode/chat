@@ -41,11 +41,11 @@ export type Account = {
   img: string | null;
   createdAt: string; // Puedes cambiar a Date si prefieres trabajar con fechas como objetos
   updateAt: string;
-  followingTo: Follows[];
-  followedBy: Follows[];
+  followingTo: Follow[];
+  followedBy: Follow[];
 };
 
-export type Follows = {
+export type Follow = {
   id: string;
   name: string | null;
   img: string | null;
