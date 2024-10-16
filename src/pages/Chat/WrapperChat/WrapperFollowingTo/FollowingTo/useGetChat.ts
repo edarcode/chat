@@ -24,8 +24,8 @@ export const useGetChat = () => {
 
   useEffect(() => {
     if (!data) return;
-    updateChat(data);
-  }, [data, updateChat]);
+    updateChat(id, data);
+  }, [data, updateChat, id]);
 
   const startChat = (id: string) => setId(id);
 

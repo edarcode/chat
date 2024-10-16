@@ -1,15 +1,14 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { Account, Follow } from "./getAccountService";
+import { Account } from "./getAccountService";
 import { Message } from "./WrapperChat/WrapperFollowingTo/FollowingTo/getChatService";
 
 type CurrentChat = {
   sender: Account | undefined;
-  receiver: Follow | undefined;
+  receiverId: string | undefined;
   chat: Message[] | undefined;
   updateSender: (sender: Account) => void;
-  updateReceiver: (receiver: Follow) => void;
-  updateChat: (chat: Message[]) => void;
+  updateChat: (receiverId: string, chat: Message[]) => void;
 };
 
 export const useCurrentChat = create<CurrentChat>()(
@@ -17,15 +16,12 @@ export const useCurrentChat = create<CurrentChat>()(
     (set) => ({
       chat: undefined,
       sender: undefined,
-      receiver: undefined,
+      receiverId: undefined,
       updateSender(sender) {
         set({ sender });
       },
-      updateReceiver(receiver) {
-        set({ receiver });
-      },
-      updateChat(chat) {
-        set({ chat });
+      updateChat(receiverId, chat) {
+        set({ receiverId, chat });
       },
     }),
     { name: "chat" }
