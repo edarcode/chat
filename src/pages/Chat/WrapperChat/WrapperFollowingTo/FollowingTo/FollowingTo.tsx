@@ -6,7 +6,8 @@ import css from "./css.module.css";
 export default function FollowingTo() {
   const account = useGlobalChatState((chat) => chat.account);
 
-  if (!account) return null;
+  if (!account || !account.followingTo.length)
+    return <span>Aún no sigues a nadie.</span>;
   return (
     <section className={css.followingTo}>
       {account.followingTo.map((record) => (
