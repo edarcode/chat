@@ -15,25 +15,29 @@ export default function WrapperMsgs() {
   const chat = useCurrentChat((state) => state.chat);
   const sender = useCurrentChat((state) => state.sender);
   const receiverId = useCurrentChat((state) => state.receiverId);
+  const refetchChat = useCurrentChat((state) => state.refetchChat);
 
   const { register, handleSubmit } = useForm<MsgsForm>({
     resolver: zodResolver(msgsSchema),
   });
 
   useEffect(() => {
-    if (!chat || !receiverId || !sender) return;
+    if (!chat || !receiverId || !sender || !refetchChat) return;
 
     socket.emit("joinRoom", { senderId: sender.id, receiverId });
-    socket.on("message", (data) => console.log(data));
+    socket.on("message", () => {
+      console.log("refetch");
+      refetchChat();
+    });
 
     return () => {
       socket.off("message");
     };
-  }, [receiverId, chat, sender]);
+  }, [receiverId, chat, sender, refetchChat]);
 
   const isValidChat = chat && chat.length > 0;
   const msgs = isValidChat
-    ? chat.map((record) => <span key={record.id}>{record.text}</span>)
+    ? chat.map((record) => <div key={record.id}>{record.text}</div>)
     : null;
 
   const onSubmit = ({ msg }: MsgsForm) => {

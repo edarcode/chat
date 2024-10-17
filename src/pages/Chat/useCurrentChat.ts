@@ -7,8 +7,10 @@ type CurrentChat = {
   sender: Account | undefined;
   receiverId: string | undefined;
   chat: Message[] | undefined;
+  refetchChat: (() => void) | undefined;
+
   updateSender: (sender: Account) => void;
-  updateChat: (receiverId: string, chat: Message[]) => void;
+  updateChat: (receiverId: string, chat: Message[], fn: () => void) => void;
 };
 
 export const useCurrentChat = create<CurrentChat>()(
@@ -17,11 +19,12 @@ export const useCurrentChat = create<CurrentChat>()(
       chat: undefined,
       sender: undefined,
       receiverId: undefined,
+      refetchChat: undefined,
       updateSender(sender) {
         set({ sender });
       },
-      updateChat(receiverId, chat) {
-        set({ receiverId, chat });
+      updateChat(receiverId, chat, refetchChat) {
+        set({ receiverId, chat, refetchChat });
       },
     }),
     { name: "chat" }
