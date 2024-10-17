@@ -1,6 +1,6 @@
 .wrapperChat {
-  max-width: 540.27px;
-  min-height: 590px;
+  max-width: 650px;
+  min-height: 440px;
   background-color: var(--bg-surf);
   display: grid;
   grid-template-columns: 30% 1fr;
