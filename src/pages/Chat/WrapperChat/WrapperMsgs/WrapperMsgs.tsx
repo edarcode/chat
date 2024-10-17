@@ -65,7 +65,7 @@ export default function WrapperMsgs() {
       <div className={css.msgs}>{msgs}</div>
 
       <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-        <InputText {...register("msg")} />
+        <InputText {...register("msg")} placeholder="" />
         <Btn>Enviar</Btn>
       </form>
     </section>

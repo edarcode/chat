@@ -3,4 +3,24 @@
   display: grid;
   gap: var(--md);
   grid-template-rows: auto 1fr;
+
+  .form {
+    position: relative;
+
+    .accountFound {
+      position: absolute;
+      top: calc(100% + var(--sm));
+      left: 0;
+      background-color: var(--bg-surf);
+      border-radius: var(--md);
+      padding: var(--md) var(--sm);
+      width: 100%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--md);
+    }
+  }
 }
