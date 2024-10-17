@@ -8,6 +8,7 @@ import io from "socket.io-client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { msgsSchema, MsgsForm } from "./msgSchema";
+import { joinClass } from "../../../../utils/joinClass";
 
 const socket = io(CHAT_API_URL.base);
 
@@ -36,7 +37,17 @@ export default function WrapperMsgs() {
 
   const isValidChat = chat && chat.length > 0;
   const msgs = isValidChat
-    ? chat.map((record) => <div key={record.id}>{record.text}</div>)
+    ? chat.map((record) => (
+        <span
+          className={joinClass([
+            css.msg,
+            record.receiverId === receiverId && css.msg__receiver,
+          ])}
+          key={record.id}
+        >
+          {record.text}
+        </span>
+      ))
     : null;
 
   const onSubmit = ({ msg }: MsgsForm) => {

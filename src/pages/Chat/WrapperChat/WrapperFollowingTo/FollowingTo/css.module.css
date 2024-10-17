@@ -13,6 +13,9 @@
     &:hover {
       background-color: var(--pri);
       border-radius: var(--md);
+      @media (prefers-color-scheme: light) {
+        background-color: var(--l-pri);
+      }
     }
 
     .name {
@@ -30,5 +33,9 @@
   .followed__selected {
     background-color: var(--pri);
     border-radius: var(--md);
+
+    @media (prefers-color-scheme: light) {
+      background-color: var(--l-pri);
+    }
   }
 }

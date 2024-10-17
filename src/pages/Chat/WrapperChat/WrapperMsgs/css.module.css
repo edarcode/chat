@@ -8,11 +8,32 @@
   &::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 2.5%;
     left: 0;
     width: 1px;
-    height: 90%;
+    height: 95%;
     background-color: var(--soft-grey);
+  }
+
+  .msgs {
+    display: grid;
+    justify-items: start;
+    gap: var(--sm);
+
+    .msg {
+      padding: var(--sm) var(--md);
+      border-radius: var(--md);
+      border: 1px solid var(--border);
+    }
+
+    .msg__receiver {
+      justify-self: end;
+      border: 1px solid var(--pri);
+
+      @media (prefers-color-scheme: light) {
+        border: 1px solid var(--l-pri);
+      }
+    }
   }
 
   .form {
