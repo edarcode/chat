@@ -8,7 +8,7 @@ export const searchAccountService = async (
 
   if (!token || !email) return;
 
-  const res = await fetch(CHAT_API_URL.searchAccount + `/${email}@gmail.com`, {
+  const res = await fetch(CHAT_API_URL.searchAccount + `/${email}`, {
     signal,
     method: "GET",
     headers: {

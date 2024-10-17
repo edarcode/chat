@@ -9,7 +9,7 @@ export const useSearchAccount = () => {
   const [email, setEmail] = useState("");
   const [debouncedEmail, setDebouncedEmail] = useState(email);
 
-  const format = emailSchema.safeParse(email + "@gmail.com");
+  const format = emailSchema.safeParse(email);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["search-account", { token, email }],

@@ -4,6 +4,8 @@ import { useGetAccount } from "./useGetAccount";
 import { useCurrentChat } from "./useCurrentChat";
 import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+import { Navigate } from "react-router-dom";
+import { LOGIN } from "../../router/children";
 
 export default function Chat() {
   const { account, isError, isLoading } = useGetAccount();
@@ -23,7 +25,7 @@ export default function Chat() {
     };
   }, [resetChat, queryClient]);
 
-  if (isError) return <section className={css.view}>Error</section>;
+  if (isError) return <Navigate to={LOGIN.to} replace />;
   if (isLoading) return <section className={css.view}>Cargando...</section>;
 
   return (
