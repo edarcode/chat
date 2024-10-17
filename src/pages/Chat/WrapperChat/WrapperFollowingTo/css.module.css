@@ -2,4 +2,5 @@
   padding: var(--md);
   display: grid;
   gap: var(--md);
+  grid-template-rows: auto 1fr;
 }

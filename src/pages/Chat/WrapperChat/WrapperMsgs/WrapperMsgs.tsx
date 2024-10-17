@@ -17,7 +17,7 @@ export default function WrapperMsgs() {
   const receiverId = useCurrentChat((state) => state.receiverId);
   const refetchChat = useCurrentChat((state) => state.refetchChat);
 
-  const { register, handleSubmit } = useForm<MsgsForm>({
+  const { register, handleSubmit, reset } = useForm<MsgsForm>({
     resolver: zodResolver(msgsSchema),
   });
 
@@ -26,7 +26,6 @@ export default function WrapperMsgs() {
 
     socket.emit("joinRoom", { senderId: sender.id, receiverId });
     socket.on("message", () => {
-      console.log("refetch");
       refetchChat();
     });
 
@@ -47,6 +46,7 @@ export default function WrapperMsgs() {
       receiverId,
       text: msg,
     });
+    reset();
   };
 
   return (

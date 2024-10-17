@@ -4,6 +4,12 @@
     gap: var(--md);
     align-items: center;
 
+    .name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .img,
     svg {
       width: 32px;

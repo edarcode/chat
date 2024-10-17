@@ -10,7 +10,7 @@ export const useGetChat = () => {
   const updateChat = useCurrentChat((state) => state.updateChat);
   const queryClient = useQueryClient();
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ["chat", { token, id }],
     queryFn: (tanStack) =>
       getChatService({
@@ -25,11 +25,12 @@ export const useGetChat = () => {
 
   useEffect(() => {
     if (!data) return;
-
-    updateChat(id, data, () =>
-      queryClient.invalidateQueries({ queryKey: ["chat"] })
-    );
-  }, [data, updateChat, id, queryClient]);
+    const refetchChat = () => {
+      queryClient.invalidateQueries({ queryKey: ["chat"] });
+      refetch();
+    };
+    updateChat(id, data, refetchChat);
+  }, [data, updateChat, id, queryClient, refetch]);
 
   const startChat = (id: string) => setId(id);
 
