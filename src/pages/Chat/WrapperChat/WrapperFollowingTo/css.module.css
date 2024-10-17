@@ -21,6 +21,10 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: var(--md);
+
+      @media (prefers-color-scheme: light) {
+        background-color: var(--l-bg-surf);
+      }
     }
   }
 }
