@@ -24,7 +24,7 @@ export default function FollowingTo() {
           onClick={() => startChat(record.id)}
         >
           <Img record={record} />
-          <span className={css.name} title={record.email.split("@")[0]}>
+          <span className={css.name} title={record.email}>
             {record.email.split("@")[0]}
           </span>
         </div>
