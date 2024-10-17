@@ -18,6 +18,7 @@
   .msgs {
     display: grid;
     justify-items: start;
+    align-content: start;
     gap: var(--sm);
 
     .msg {
