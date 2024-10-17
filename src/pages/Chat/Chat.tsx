@@ -3,15 +3,25 @@ import WrapperChat from "./WrapperChat/WrapperChat";
 import { useGetAccount } from "./useGetAccount";
 import { useCurrentChat } from "./useCurrentChat";
 import { useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function Chat() {
   const { account, isError, isLoading } = useGetAccount();
   const updateSender = useCurrentChat((state) => state.updateSender);
+  const resetChat = useCurrentChat((state) => state.resetChat);
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     if (!account) return;
     updateSender(account);
   }, [account, updateSender]);
+
+  useEffect(() => {
+    return () => {
+      queryClient.invalidateQueries({ queryKey: ["chat"] });
+      resetChat();
+    };
+  }, [resetChat, queryClient]);
 
   if (isError) return <span>Error</span>;
   if (isLoading) return <span>Cargando...</span>;

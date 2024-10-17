@@ -11,6 +11,7 @@ type CurrentChat = {
 
   updateSender: (sender: Account) => void;
   updateChat: (receiverId: string, chat: Message[], fn: () => void) => void;
+  resetChat: () => void;
 };
 
 export const useCurrentChat = create<CurrentChat>()(
@@ -25,6 +26,14 @@ export const useCurrentChat = create<CurrentChat>()(
       },
       updateChat(receiverId, chat, refetchChat) {
         set({ receiverId, chat, refetchChat });
+      },
+      resetChat() {
+        set({
+          chat: undefined,
+          sender: undefined,
+          receiverId: undefined,
+          refetchChat: undefined,
+        });
       },
     }),
     { name: "chat" }
