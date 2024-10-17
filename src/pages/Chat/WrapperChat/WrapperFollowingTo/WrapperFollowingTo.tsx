@@ -38,13 +38,13 @@ export default function WrapperFollowingTo() {
   useEffect(() => {
     if (!res) return;
     cleanEmail();
-    queryClient.refetchQueries();
+    queryClient.invalidateQueries();
   }, [res, queryClient]);
 
   useEffect(() => {
     if (!resFollowTo) return;
     cleanEmail();
-    queryClient.refetchQueries();
+    queryClient.invalidateQueries();
   }, [resFollowTo, queryClient]);
 
   return (

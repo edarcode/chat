@@ -23,8 +23,8 @@ export default function Chat() {
     };
   }, [resetChat, queryClient]);
 
-  if (isError) return <span>Error</span>;
-  if (isLoading) return <span>Cargando...</span>;
+  if (isError) return <section className={css.view}>Error</section>;
+  if (isLoading) return <section className={css.view}>Cargando...</section>;
 
   return (
     <section className={css.view}>
