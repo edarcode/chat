@@ -1,5 +1,5 @@
 class ChatApiUrl {
-  base = "http://localhost:3000";
+  base = "https://chat-api-nksk.onrender.com";
   register = `${this.base}/auth/register`;
   login = `${this.base}/auth/login`;
   refreshToken = `${this.base}/auth/refresh-token`;
