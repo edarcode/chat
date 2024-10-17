@@ -1,8 +1,19 @@
 .followingTo {
+  display: grid;
+  align-content: start;
+  gap: var(--sm);
+
   .followed {
     display: flex;
-    gap: var(--md);
+    flex-wrap: wrap;
+    gap: var(--sm);
     align-items: center;
+    padding: var(--sm);
+
+    &:hover {
+      background-color: var(--pri);
+      border-radius: var(--md);
+    }
 
     .name {
       white-space: nowrap;
@@ -15,5 +26,9 @@
       width: 32px;
       height: 32px;
     }
+  }
+  .followed__selected {
+    background-color: var(--pri);
+    border-radius: var(--md);
   }
 }

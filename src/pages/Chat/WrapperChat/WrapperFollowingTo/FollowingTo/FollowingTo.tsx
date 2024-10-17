@@ -1,4 +1,5 @@
 import { DefaultImg } from "../../../../../components/icons/DefaultImg";
+import { joinClass } from "../../../../../utils/joinClass";
 import { Follow } from "../../../getAccountService";
 import { useCurrentChat } from "../../../useCurrentChat";
 import css from "./css.module.css";
@@ -6,6 +7,7 @@ import { useGetChat } from "./useGetChat";
 
 export default function FollowingTo() {
   const sender = useCurrentChat((state) => state.sender);
+  const receiverId = useCurrentChat((state) => state.receiverId);
   const { startChat } = useGetChat();
 
   if (!sender || !sender.followingTo.length)
@@ -15,7 +17,10 @@ export default function FollowingTo() {
       {sender.followingTo.map((record) => (
         <div
           key={record.id}
-          className={css.followed}
+          className={joinClass([
+            css.followed,
+            receiverId === record.id && css.followed__selected,
+          ])}
           onClick={() => startChat(record.id)}
         >
           <Img record={record} />
