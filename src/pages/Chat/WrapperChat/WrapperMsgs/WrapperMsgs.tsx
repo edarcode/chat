@@ -32,6 +32,7 @@ export default function WrapperMsgs() {
 
     return () => {
       socket.off("message");
+      refetchChat();
     };
   }, [receiverId, chat, sender, refetchChat]);
 
